@@ -1,5 +1,13 @@
-.card-grid{
-  display: grid;
-  grid-template-columns: 200px 200pc 200px;
-  grid-template-rows: 300px 300px;
+.carousel {
+ display: flex;
+ justify-content: space-between;
+}
+.arrows{
+  display: flex;
+  justify-content: center;
+}
+.carousel__arrow {
+  height: 25px;
+  width: 25px;
+  margin: 10px;
 }

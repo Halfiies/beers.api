@@ -1,5 +1,13 @@
 .card{
+  height: 500px;
+  width: 250px;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px
+}
+
+img{
   height: 300px;
   width: 200px;
-  
 }

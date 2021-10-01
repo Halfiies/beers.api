@@ -7,7 +7,7 @@ const beerByRatingArr = beers.filter(beer => beer)
 const App = () => {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar/>
       <Main  beerArr={beers}/>
     </div>
   );

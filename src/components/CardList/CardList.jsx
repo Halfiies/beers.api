@@ -24,11 +24,17 @@ const handleDecrement = () => {
 };
 // counter needs to increment in 3s? or ones, but always displaying three
  return(
+ <div>
    <div className="carousel">
+     <Card beerInfo={beersArr[counter]}/>
+     <Card beerInfo={beersArr[counter+1]}/> 
+     <Card beerInfo={beersArr[counter+2]}/> 
+  </div>
+  <div className="arrows">
      <img src={leftArrow} alt="left arrow" onClick={handleDecrement} className="carousel__arrow carousel__arrow--left" />
-     <Card beerInfo={beersArr[counter]}/> 
      <img src={rightArrow} alt="right arrow" onClick={handleIncrement} className="carousel__arrow carousel__arrow--right" />
-   </div>
+  </div>
+</div>
  )
 }
 export default CardList

@@ -5,10 +5,10 @@ const Card = props => {
  const {beerInfo} = props;
 
  return (
-   <div>
+   <div className="card">
    <h3>{beerInfo.name}</h3>
    <h5>{beerInfo.tagline}</h5>
-   <img src={beerInfo.image_url}></img>
+   <img src={beerInfo.image_url} alt={beerInfo.name}></img>
    <p>{beerInfo.description}</p>
    </div>      
  )
