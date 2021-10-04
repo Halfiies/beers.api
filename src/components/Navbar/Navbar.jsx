@@ -1,15 +1,13 @@
 import React from "react";
-import "./Navbar.scss"
+import SearchBar from "../SearchBar/SearchBar";
+import "./Navbar.scss";
 
 const Navbar = props => {
-  const {text} = props
+  const {label, searchTerm, handleInput} = props
   return (
  <div className="navbar">
-   <p>{text} </p>
-  <input type="text" className="navbar__Search"></input>
-  <input type="checkbox" className="navbar__Checkbox"></input>
-  <input type="checkbox" className="navbar__Checkbox"></input>
-  <input type="checkbox" className="navbar__Checkbox"></input>
+  <SearchBar label={label} searchTerm={searchTerm} handleInput={handleInput} />
+
  </div>
  )
 }
