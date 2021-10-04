@@ -8,7 +8,7 @@ const CardList = props => {
 const {beersArr} = props 
 const [counter, setCounter] = useState(0);
 const handleIncrement = () => {
-  if (counter === beersArr.length - 1) {
+  if (counter === beersArr.length - 3) {
     setCounter(0);
   } else {
     setCounter(counter + 1);
@@ -17,7 +17,7 @@ const handleIncrement = () => {
 
 const handleDecrement = () => {
   if (counter === 0) {
-    setCounter(beersArr.length - 1);
+    setCounter(beersArr.length - 3);
   } else {
     setCounter(counter - 1);
   }
