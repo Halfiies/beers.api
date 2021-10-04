@@ -4,7 +4,7 @@ import Main from './components/Main/Main';
 import beers from './data/beers.js'
 import Navbar from './components/Navbar/Navbar';
 import Card from './components/Card/Card';
-
+import SearchResults from './components/SearchResults/SearchResults';
 
 
 
@@ -23,7 +23,7 @@ const App = () => {
     <div className="App">
       <Navbar label={"beer-search"} searchTerm={searchTerm} handleInput={handleInput} />
       <Main beerArr ={beers}/>
-      <Card beerInfo= {beerObj[0]}/>
+      <SearchResults beersArr={beerObj}/>
     </div>
   );
 }

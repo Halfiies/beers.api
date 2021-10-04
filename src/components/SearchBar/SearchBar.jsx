@@ -7,7 +7,7 @@ const SearchBar = props => {
 
   return (
     <form className="search-bar">
-      <label htmlFor={label} className="search-bar__label">
+      <label htmlFor={label} className="search-bar__label"> Search
       </label>
       <input type="text" name={label} value={searchTerm} onInput={handleInput} className="search-bar__input" />
     </form>
