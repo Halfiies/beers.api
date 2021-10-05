@@ -13,7 +13,7 @@ const beers = [
         "ebc": 20,
         "srm": 10,
         "ph": 4.4,
-        "attenuation_level": 75,
+        "attenuation_level":175,
         "volume": {
             "value": 20,
             "unit": "litres"
