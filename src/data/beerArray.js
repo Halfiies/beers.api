@@ -1,17 +1,7 @@
-const getBeers = () => {
-  fetch("https://api.punkapi.com/v2/")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      const beers
-    });
-};
-
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [beersArr, setBeersArr] = usestate("")
-  
+  const [beersArr, setBeersArr] = usestate("");
+
   const handleInput = (event) => {
     const cleanInput = event.target.value.toLowerCase();
     setSearchTerm(cleanInput);
@@ -22,7 +12,7 @@ const App = () => {
       .then((data) => data.json())
       .then((beers) => {
         return setBeersArr(beers);
-      })
+      });
     console.log(pokemon);
   };
   useEffect(fetchData, [searchTerm]);

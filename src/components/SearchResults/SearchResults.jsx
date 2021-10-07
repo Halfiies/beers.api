@@ -6,7 +6,6 @@ import rightArrow from "../../assets/images/right-arrow.png";
 
 const SearchResults = (props) => {
   const { beersArr } = props;
-
   //carousel logic
   const [counter, setCounter] = useState(0);
   const handleIncrement = () => {
@@ -49,6 +48,7 @@ const SearchResults = (props) => {
         </div>
       </div>
     );
+    // logic for no carousel
   } else {
     return (
       <div className="SearchResults">
@@ -64,42 +64,6 @@ const SearchResults = (props) => {
       </div>
     );
   }
-  // } else if (beersArr.length === 3) {
-  //   return (
-  //     <div className="SearchResults">
-  //       <div className="threeResults">
-  //         <Card beerInfo={beersArr[0]} />
-  //         <Card beerInfo={beersArr[1]} />
-  //         <Card beerInfo={beersArr[2]} />
-  //       </div>
-  //     </div>
-  //   );
-  // } else if (beersArr.length === 2) {
-  //   return (
-  //     <div className="SearchResults">
-  //       <div className="twoResults">
-  //         <Card beerInfo={beersArr[0]} />
-  //         <Card beerInfo={beersArr[1]} />
-  //       </div>
-  //     </div>
-  //   );
-  // } else if (beersArr.length === 2) {
-  //   return (
-  //     <div className="SearchResults">
-  //       <div className="oneResult">
-  //         <Card beerInfo={beersArr[0]} />
-  //       </div>
-  //     </div>
-  //   );
-  // } else {
-  //   return (
-  //     <div className="SearchResults">
-  //       <div className="noResults">
-  //         <p>No Results Found</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 };
 
 export default SearchResults;
