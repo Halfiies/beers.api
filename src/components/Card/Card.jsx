@@ -9,7 +9,8 @@ const Card = (props) => {
       <h3>{beerInfo.name}</h3>
       <h5>{beerInfo.tagline}</h5>
       <img src={beerInfo.image_url} alt={beerInfo.name}></img>
-      <p>{beerInfo.description}</p>
+      <p>{beerInfo.first_brewed}</p>
+      <p>{beerInfo.ph}</p>
     </div>
   );
 };
