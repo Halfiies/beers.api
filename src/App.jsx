@@ -2,11 +2,12 @@ import "./App.scss";
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import SearchResults from "./components/SearchResults/SearchResults";
+import { BeerInfo } from "./Containers/BeerInfo/BeerInfo";
 import searchCriteria from "./data/searchcriteria";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [beers, setBeers] = useState([]);
+  const [beersArr, setBeersArr] = useState([]);
   const [checkedState, setCheckedState] = useState(
     new Array(searchCriteria.length).fill(false)
   );
@@ -36,10 +37,6 @@ const App = () => {
     return additionalTerms;
   };
   createTerms(checkedState);
-  //handles ph checkbox input
-  const handlePh = () => {
-    setCheckedPh(!checkedPh);
-  };
   useEffect(() => {
     // fixes problems with empty strings
     if (!searchTerm) {
@@ -48,7 +45,7 @@ const App = () => {
           return res.json();
         })
         .then((data) => {
-          return setBeers(data);
+          return setBeersArr(data);
         });
     } else {
       // returns search results on keystrokes
@@ -59,30 +56,41 @@ const App = () => {
           return res.json();
         })
         .then((data) => {
-          return setBeers(data);
+          return setBeersArr(data);
         });
     }
   }, [searchTerm, additionalTerms]);
   // filters beers by ph checkbox since no api parameters are available
-
+  const handlePh = () => {
+    setCheckedPh(!checkedPh);
+  };
   useEffect(() => {
     if (checkedPh) {
-      return setBeers(beers.filter((beer) => beer.ph < 4 && beer.ph));
+      return setBeersArr(beersArr.filter((beer) => beer.ph < 4 && beer.ph));
     } else if (!checkedPh) {
     }
   }, [checkedPh]);
 
   return (
-    <div className="App">
-      <Navbar
-        label={"beer-search"}
-        handleInput={handleInput}
-        handleOnChange={handleOnChange}
-        searchCriteria={searchCriteria}
-        handlePh={handlePh}
-      />
-      <SearchResults beersArr={beers} />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar
+          label={"beer-search"}
+          handleInput={handleInput}
+          handleOnChange={handleOnChange}
+          searchCriteria={searchCriteria}
+          handlePh={handlePh}
+        />
+        <Switch>
+          <Route path="/beersArr/:BeerId">
+            <BeerInfo beersArr={beersArr} />
+          </Route>
+          <Route path="/">
+            <SearchResults beersArr={beersArr} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 

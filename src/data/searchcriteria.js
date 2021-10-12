@@ -9,5 +9,10 @@ const searchCriteria = [
     text: "Search for beers brewed before 2010",
     search: "&brewed_before=01-2010",
   },
+  // {
+  //   id: "colour",
+  //   text: "Search for dark beers",
+  //   search: "&ebc_gt=30",
+  // },
 ];
 export default searchCriteria;
