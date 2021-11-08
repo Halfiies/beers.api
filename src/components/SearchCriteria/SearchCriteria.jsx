@@ -1,3 +1,4 @@
+import "./SearchCriteria.scss";
 const SearchCriteria = (props) => {
   const { handleOnChange, text, value, isChecked } = props;
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../SearchBar/SearchBar.scss";
-// just a from to capture search terms
+// just a form to capture search terms
 const SearchBar = (props) => {
   const { label, handleInput } = props;
   const capitalizedLabel = label[0].toUpperCase() + label.slice(1);

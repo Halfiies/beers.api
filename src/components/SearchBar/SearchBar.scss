@@ -1,7 +1,8 @@
-.search-bar{
+@use "/src/assets/Styles/variables" as *;
+.search-bar {
   margin: 20px;
 }
-input{
+input {
   border: black 1px solid;
   border-radius: 3px;
 }
