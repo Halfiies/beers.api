@@ -3,7 +3,7 @@ const SearchCriteria = (props) => {
   const { handleOnChange, text, value, isChecked } = props;
   return (
     <div>
-      <label htmlfor={value}>
+      <label htmlFor={value}>
         <input
           type="checkbox"
           id={value}

@@ -3,9 +3,11 @@ import "./SearchResults.scss";
 import Card from "../Card/Card";
 import leftArrow from "../../assets/images/left-arrow.png";
 import rightArrow from "../../assets/images/right-arrow.png";
+import { useMediaQuery } from "react-responsive";
 
 const SearchResults = (props) => {
   const { beersArr } = props;
+  const isMobile = useMediaQuery({ query: "(min-width:1023px)" });
   //carousel logic
   const [counter, setCounter] = useState(0);
   const handleIncrement = () => {
@@ -29,8 +31,8 @@ const SearchResults = (props) => {
       <div className="SearchResults">
         <div className="carousel">
           <Card beerInfo={beersArr[counter]} />
-          <Card beerInfo={beersArr[counter + 1]} />
-          <Card beerInfo={beersArr[counter + 2]} />
+          {isMobile && <Card beerInfo={beersArr[counter + 1]} />}
+          {isMobile && <Card beerInfo={beersArr[counter + 2]} />}
         </div>
         <div className="arrows">
           <img

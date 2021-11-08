@@ -82,8 +82,8 @@ const App = () => {
           handlePh={handlePh}
         />
         <Switch>
-          <Route path="/beersArr/:BeerId">
-            <BeerInfo beersArr={beersArr} />
+          <Route path="/beers/:beerId">
+            {beersArr.length > 0 ? <BeerInfo beersArr={beersArr} /> : null}
           </Route>
           <Route path="/">
             <SearchResults beersArr={beersArr} />
